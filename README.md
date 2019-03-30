@@ -1,4 +1,4 @@
 # 2018-19-CSAAI-Video
 
 
-https://martaquintana.github.io/-2018-19-CSAAI-Video/video.html
+https://martaquintana.github.io/2018-19-CSAAI-Video/video.html
