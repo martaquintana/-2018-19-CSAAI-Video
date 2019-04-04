@@ -1,18 +1,16 @@
 function main()
 {
-  var canvas = document.getElementById('display')
-  canvas.width = 600;
-  canvas.height = 400;
+  var display;
 
-  var ctx = canvas.getContext("2d");
+
   console.log("Video 01...")
-  videos=[video1, video2, video3]
   video1 = document.getElementById("video1")
   video2 = document.getElementById("video2")
   video3 = document.getElementById("video3")
   boton1 = document.getElementById("boton1")
   boton2 = document.getElementById("boton2")
   boton3 = document.getElementById("boton3")
+
   video1.play()
   video2.play()
   video3.play()
@@ -24,17 +22,35 @@ function main()
   video3.width = 200;
   video3.height= 100;
 
-  console.log(videos)
-  function draw(v,c,w,h,b) {
-    c.drawImage(v,0,0,w,h);
-    setTimeout(draw,20,v,c,w,h);
-  }
+display = document.getElementById('display');
+display.width = 600;
+display.height = 400;
+
+var v = [
+        "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4",
+        "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4",
+        "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4"
+        ];
+
+
   boton1.onclick=()=>{
-    draw(video1,ctx,canvas.width,canvas.height,boton1);
+    cambiarvideo(0);
+    display.currentTime= video1.currentTime;
   }
   boton2.onclick=()=>{
-    draw(video2,ctx,canvas.width,canvas.height,boton2);}
-  boton3.onclick=()=>{
-    draw(video3,ctx,canvas.width,canvas.height,boton3);
-    }
+    cambiarvideo(1);
+    display.currentTime= video2.currentTime;
   }
+  boton3.onclick=()=>{
+    cambiarvideo(2);
+    display.currentTime= video3.currentTime;}
+
+function cambiarvideo(n){
+    console.log(v[n])
+    videosource = document.getElementById('pantalla');
+    videosource.setAttribute('src', v[n]);
+    display.load();
+    display.setAttribute('src', v[n]);
+    display.play();
+  }
+}
