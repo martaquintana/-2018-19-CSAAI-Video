@@ -33,6 +33,35 @@ var v = [
         ];
 
 
+  video1.onmouseover = () => {
+          console.log("Mouse over 1!!");
+          video1.muted=false;
+  }
+
+  video1.onmouseout = () => {
+          console.log("Mouse out 1!!");
+          video1.muted= true;
+  }
+
+  video2.onmouseover = () => {
+          console.log("Mouse over 2!!");
+          video2.muted=false;
+  }
+  video2.onmouseout = () => {
+          console.log("Mouse out 2!!");
+          video2.muted=true;
+  }
+
+  video3.onmouseover = () => {
+          console.log("Mouse over 3!!");
+          video3.muted=false;
+  }
+  video3.onmouseover = () => {
+          console.log("Mouse out 3!!");
+          video3.muted=true;
+  }
+
+
   boton1.onclick=()=>{
     cambiarvideo(0);
     display.currentTime= video1.currentTime;
