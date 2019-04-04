@@ -33,18 +33,24 @@ var v = [
         ];
 
 
-  boton1.onclick=()=>{cambiarvideo(0);}
-  boton2.onclick=()=>{cambiarvideo(1);}
-  boton3.onclick=()=>{cambiarvideo(2);}
+  boton1.onclick=()=>{
+    cambiarvideo(0);
+    display.currentTime= video1.currentTime;
+  }
+  boton2.onclick=()=>{
+    cambiarvideo(1);
+    display.currentTime= video2.currentTime;
+  }
+  boton3.onclick=()=>{
+    cambiarvideo(2);
+    display.currentTime= video3.currentTime;}
 
 function cambiarvideo(n){
-  console.log('hey')
-  videosource = document.getElementById('pantalla');
+    console.log(v[n])
+    videosource = document.getElementById('pantalla');
     videosource.setAttribute('src', v[n]);
     display.load();
     display.setAttribute('src', v[n]);
     display.play();
   }
-
-
 }
