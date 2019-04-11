@@ -15,6 +15,8 @@ function main()
   video2.play()
   video3.play()
 
+
+
   video1.width = 200;
   video1.height= 100;
   video2.width = 200;
@@ -34,35 +36,39 @@ var v = [
 
   video1.onmouseover = () => {
           console.log("Mouse over 1!!");
-          //video1.muted=false;
+          video1.muted=false;
           video1.style.borderStyle = "double";
+          if(video1.paused){
+          console.log(video1.paused);
+          video1.play()
+          }
   }
 
   video1.onmouseout = () => {
           console.log("Mouse out 1!!");
-          //video1.muted= true;
+          video1.muted= true;
           video1.style.borderStyle = "";
   }
 
   video2.onmouseover = () => {
           console.log("Mouse over 2!!");
-          //video2.muted=false;
+          video2.muted=false;
           video2.style.borderStyle = "double";
   }
   video2.onmouseout = () => {
           console.log("Mouse out 2!!");
-          //video2.muted=true;
+          video2.muted=true;
           video2.style.borderStyle = "";
   }
 
   video3.onmouseover = () => {
           console.log("Mouse over 3!!");
-          //video3.muted=false;
+          video3.muted=false;
           video3.style.borderStyle = "double";
   }
   video3.onmouseout = () => {
           console.log("Mouse out 3!!");
-          //video3.muted=true;
+          video3.muted=true;
           video3.style.borderStyle = "";
   }
 
@@ -97,6 +103,7 @@ var v = [
     boton1.style.borderStyle = "";
     boton2.style.borderStyle = "";
     boton3.style.borderStyle = "double";
+  //boton3.style.borderWidth = "thick";
   }
 
 function cambiarvideo(n){
