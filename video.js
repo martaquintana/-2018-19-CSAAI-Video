@@ -15,8 +15,6 @@ function main()
   video2.play()
   video3.play()
 
-
-
   video1.width = 200;
   video1.height= 100;
   video2.width = 200;
@@ -27,6 +25,19 @@ function main()
 display = document.getElementById('display');
 display.width = 600;
 display.height = 400;
+
+function hora(segundos){
+  var d=new Date(segundos*1000);
+  // Ajuste de las 23 horas
+  var hora = (d.getHours()==0)?23:d.getHours()-1;
+  var hora = (hora<9)?"0"+hora:hora;
+  var minuto = (d.getMinutes()<9)?"0"+d.getMinutes():d.getMinutes();
+  var segundo = (d.getSeconds()<9)?"0"+d.getSeconds():d.getSeconds();
+  return hora+":"+minuto+":"+segundo;
+ }
+ display.addEventListener("timeupdate",function(ev){
+ document.getElementById("tiempo").innerHTML = "TIME "+ hora(display.currentTime);
+},true);
 
 var v = [
         "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4",
@@ -40,7 +51,7 @@ var v = [
           video1.style.borderStyle = "double";
           if(video1.paused){
           console.log(video1.paused);
-          video1.play()
+          video1.play();
           }
   }
 
