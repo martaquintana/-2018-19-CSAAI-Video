@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="video.css">
   </head>
   <body onload="main();">
-    <div >
-      <video id="display" autoplay  muted>
+    <table>
+          <tr>
+            <td>
+    <video id="display" autoplay  muted loop >
         <source id="pantalla" src="barras.mp4"/>
     </video>
-    </div>
-    <p id = "tiempo">TIME</p>
     <br>
     <video id="video1" autoplay  muted loop controls>
         <source src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4"/>
@@ -23,12 +23,18 @@
     <video id="video3" autoplay  muted loop controls>
         <source src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4"/>
     </video>
-
     <br>
-
     <button type="button" id="boton1">CÁMARA 1</button>
     <button type="button" id="boton2">CÁMARA 2</button>
     <button type="button" id="boton3">CÁMARA 3</button>
-    <br>
+    </td>
+      <td>
+          <p id = "tiempo">TIME</p>
+          <button type="button" id="bucle">BUCLE</button>
+          <p>START: <input type="number" id="start"></p>
+         <p>END: <input type="number" id="end"></p>
+       </td>
+         </tr>
+     </table>
   </body>
 </html>
