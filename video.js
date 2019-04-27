@@ -10,6 +10,9 @@ function main()
   boton1 = document.getElementById("boton1")
   boton2 = document.getElementById("boton2")
   boton3 = document.getElementById("boton3")
+  botonbucle = document.getElementById("bucle")
+  start = document.getElementById("start").value;
+  end= document.getElementById("end").value;
 
   video1.play()
   video2.play()
@@ -37,7 +40,14 @@ function hora(segundos){
  }
  display.addEventListener("timeupdate",function(ev){
  document.getElementById("tiempo").innerHTML = "TIME "+ hora(display.currentTime);
+ //metido aqui para que compruebe que no se pase de tiempo
+ if (display.currentTime > end ){
+      display.currentTime = start;
+ }
+
 },true);
+
+
 
 var v = [
         "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4",
@@ -115,6 +125,12 @@ var v = [
     boton2.style.borderStyle = "";
     boton3.style.borderStyle = "double";
   //boton3.style.borderWidth = "thick";
+  }
+
+
+  botonbucle.onclick =()=> {
+    console.log(start);
+    display.currentTime = start;
   }
 
 function cambiarvideo(n){
