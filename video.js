@@ -41,7 +41,7 @@ function hora(segundos){
  display.addEventListener("timeupdate",function(ev){
  document.getElementById("tiempo").innerHTML = "TIME "+ hora(display.currentTime);
  //metido aqui para que compruebe que no se pase de tiempo
- if (display.currentTime > end ){
+ if (end != 0 && display.currentTime > end ){
       display.currentTime = start;
  }
 
