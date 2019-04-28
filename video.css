@@ -1,4 +1,3 @@
-
 #boton1, #boton2 ,#boton3  {
   text-decoration: none;
   padding: 10px;
@@ -11,3 +10,24 @@
   margin-left: 40px;
 }
 #boton2,#boton3{margin-left: 70px;}
+  p{color:white;}
+#tiempo{
+    padding: 10px;
+    background-color:black;
+    color: white;
+    }
+table{
+  padding: 45px;
+  padding-top: 10px;
+  background-color:#3f3f3f;
+  padding-bottom: 10px;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 5px 20px 0 rgba(0,0,0,0.19);
+  border: 2px solid #1f1f1f;
+}
+body{
+  margin: 5px;
+  background-image: url("textura.jpg");
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 5px 20px 0 rgba(0,0,0,0.19);
+  text-align: center;
+  opacity:0.9;
+}
